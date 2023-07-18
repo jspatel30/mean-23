@@ -1,6 +1,6 @@
 const express = require("express")
 const route = express.Router()
-const CategoryController = require("../Controller/categoryController")
+const CategoryController = require("../controller/categoryController")
 
 route.post("/addCategory",CategoryController.addCategory)
 route.get("/getCategoryById/:categoryId",CategoryController.getCategoryById)
