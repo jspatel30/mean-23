@@ -1,4 +1,4 @@
-const CategoryModel = require("../Model/categoryModel")
+const CategoryModel = require("../model/categoryModel")
 
 //addCategory
 module.exports.addCategory = function(req,res){
