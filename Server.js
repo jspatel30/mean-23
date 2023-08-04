@@ -5,6 +5,7 @@ const ProductRoute = require("./app/src/routes/product.routes")
 const CategoryRoute = require("./app/src/routes/category.routes")
 const authMiddleware = require("./app/src/middleware/auth.middleware")
 const publicRoute = require("./app/src/routes/public.Routes")
+const cors = require("cors")
 
 const sessionControllerDB = require("./app/src/controller/signup_loginController")
 
@@ -12,7 +13,7 @@ const sessionControllerDB = require("./app/src/controller/signup_loginController
 //middleware
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-
+app.use(cors())
 
 //private
 app.use("/admin",authMiddleware,ProductRoute)
