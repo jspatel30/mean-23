@@ -40,10 +40,27 @@ module.exports.login = async function(req,res){
     }
 }
 
+//getAllUser
 module.exports.getAllUser = function(req,res){
     UserModel.find().then(data=>{
         res.json({data:data,"msg":"USer Retrieved",rescode:200})
     }).catch((err)=>{
         res.json({data:data,"msg":"USer Retrieved",rescode:200})
+    })
+}
+
+//deleteUserById
+module.exports.deleteUserById = function(req,res)
+{
+    UserModel.findByIdAndDelete(req.params.userId).then((data)=>{
+        res.status(200).json({
+            msg:"User deleted",
+            data:data
+        })
+    }).catch((err)=>{
+        res.statsu(-9).json({
+            msg:"User deletion failed",
+            err:err
+        })
     })
 }
