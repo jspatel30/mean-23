@@ -22,9 +22,9 @@ app.use("/admin",authMiddleware,CategoryRoute)
 //public
 app.use("/public",publicRoute)
 
-app.post("/signup",sessionControllerDB.signup)
-app.get("/getAllUser",sessionControllerDB.getAllUser)
-app.post("/login",sessionControllerDB.login)
+// app.post("/signup",sessionControllerDB.signup)
+// app.get("/getAllUser",sessionControllerDB.getAllUser)
+// app.post("/login",sessionControllerDB.login)
 
 app.listen(9999,function(){
     console.log("Server Started at 9999")
