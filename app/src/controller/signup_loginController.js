@@ -64,3 +64,19 @@ module.exports.deleteUserById = function(req,res)
         })
     })
 }
+
+//viewUserById--- in Angular
+module.exports.viewUserById = function(req,res)
+{
+    UserModel.findById(req.params.userId).then((data)=>{
+        req.status(200).json({
+            msg:"User retrieved",
+            "data":data
+        })
+    }).catch((err)=>{
+        req.status(-9).json({
+            msg:"User not retrieved",
+            "err":err
+        })
+    })
+}
