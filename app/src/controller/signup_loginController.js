@@ -80,3 +80,29 @@ module.exports.viewUserById = function(req,res)
         })
     })
 }
+
+//updateUser
+module.exports.updateUserById = async function(req,res){
+    let user  = await UserModel.findById({_id:req.params.userId})
+    if(req.body.firstname)
+    {
+        user.firstname = req.body.firstname
+    }
+    if(req.body.email)
+    {
+        user.email = req.body.email
+    }
+    user = await user.save().then((data)=>{
+        res.status(200).json(
+            {
+                msg:"User Updated Successfully",
+                data:data
+            }
+        )
+    }).catch((err)=>{
+        res.status(-9).json({
+            msg:"User Not Updated",
+            err:err
+        })
+    })
+}

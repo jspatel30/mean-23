@@ -10,4 +10,5 @@ route.post("/login",signupController.login)
 route.get("/getAllUsers",signupController.getAllUser)
 route.delete("/deleteUserById/:userId",signupController.deleteUserById)
 route.get("/viewUserById/:userId",signupController.viewUserById)
+route.put("/updateUserById/:userId",signupController.updateUserById)
 module.exports = route
